@@ -1,3 +1,4 @@
 Test Project Board 
 
-test git branch
+view get / root page
+view get /error error page
