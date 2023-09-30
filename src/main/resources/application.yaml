@@ -58,7 +58,7 @@ spring:
 
 ---
 
-spring:
+#spring:
 #  config.activate.on-profile: test
 #  config.activate.on-profile: testdb
 #  datasource:
