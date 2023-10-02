@@ -30,11 +30,12 @@ public class DataRestTest {
     @Test
     void givenNothing_whenRequestArticles_thenReturnsArticlesJsonResponse() throws Exception {
         // Given type get & one more ctrl+space & option+enter -> static import
+
+        // When & Then
         mvc.perform(get("/api/articles"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
                 .andDo(print())
         ;
-        // When & Then
     }
 }
