@@ -38,4 +38,56 @@ public class DataRestTest {
                 .andDo(print())
         ;
     }
+
+    @DisplayName("[api] get one article")
+    @Test
+    void givenNothing_whenRequestArticle_thenReturnsArticleJsonResponse() throws Exception {
+        // Given type get & one more ctrl+space & option+enter -> static import
+
+        // When & Then
+        mvc.perform(get("/api/articles/1"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
+                .andDo(print())
+        ;
+    }
+
+    @DisplayName("[api] get one article -> get articleComments list")
+    @Test
+    void givenNothing_whenRequestArticleCommentsFromArticle_thenReturnsArticleCommentsJsonResponse() throws Exception {
+        // Given type get & one more ctrl+space & option+enter -> static import
+
+        // When & Then
+        mvc.perform(get("/api/articles/1/articleComments"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
+                .andDo(print())
+        ;
+    }
+
+    @DisplayName("[api] get articleComments list")
+    @Test
+    void givenNothing_whenRequestArticleComments_thenReturnsArticleCommentsJsonResponse() throws Exception {
+        // Given type get & one more ctrl+space & option+enter -> static import
+
+        // When & Then
+        mvc.perform(get("/api/articleComments"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
+                .andDo(print())
+        ;
+    }
+
+    @DisplayName("[api] get one articleComment")
+    @Test
+    void givenNothing_whenRequestArticleComment_thenReturnsArticleCommentJsonResponse() throws Exception {
+        // Given type get & one more ctrl+space & option+enter -> static import
+
+        // When & Then
+        mvc.perform(get("/api/articleComments/1"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
+                .andDo(print())
+        ;
+    }
 }
