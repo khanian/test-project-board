@@ -34,7 +34,7 @@ class ArticleControllerTest {
                 .andExpect(model().attributeExists("articles"));
     }
 
-    @Disabled("developing...")
+//    @Disabled("developing...")
     @DisplayName("[view][GET] get detail 게시글 상세 - success")
     @Test
     public void givenNothing_whenRequestArticleView_thenReturnsArticleView() throws Exception {
@@ -44,7 +44,7 @@ class ArticleControllerTest {
         mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(view().name("articles/datail"))
+                .andExpect(view().name("articles/detail"))
                 .andExpect(model().attributeExists("article"))
                 .andExpect(model().attributeExists("articleComments"));
     }
